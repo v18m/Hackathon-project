@@ -19,8 +19,5 @@ services:
     environment:
       - GATEWAY_PORT=4433
       - BACKEND_URL=http://backend:3000
-    volumes:
-      - ../gateway/certs:/usr/src/app/gateway/certs
-      - ../logs:/usr/src/app/logs
     depends_on:
       - backend
