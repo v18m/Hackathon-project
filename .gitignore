@@ -1,0 +1,5 @@
+node_modules/
+logs/
+gateway/certs/
+.env
+.DS_Store

@@ -1,0 +1,22 @@
+{
+  "name": "pqc-reverse-proxy-gateway",
+  "version": "1.0.0",
+  "description": "Transparent reverse proxy gateway with PQC tunnel",
+  "main": "gateway/server.js",
+  "scripts": {
+    "start:gateway": "node gateway/server.js",
+    "start:backend": "node backend/server.js",
+    "start:client": "node client/request.js",
+    "generate-certs": "node scripts/generateCerts.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "http-proxy-middleware": "^2.0.6",
+    "node-forge": "^1.4.0",
+    "selfsigned": "^5.5.0",
+    "winston": "^3.11.0"
+  }
+}

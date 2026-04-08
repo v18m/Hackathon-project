@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile.backend
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+
+  gateway:
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile.gateway
+    ports:
+      - "4433:4433"
+    environment:
+      - GATEWAY_PORT=4433
+      - BACKEND_URL=http://backend:3000
+    volumes:
+      - ../gateway/certs:/usr/src/app/gateway/certs
+      - ../logs:/usr/src/app/logs
+    depends_on:
+      - backend

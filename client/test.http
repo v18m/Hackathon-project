@@ -1,0 +1,2 @@
+### Test PQC Gateway Proxy
+GET https://localhost:4433/api/data HTTP/1.1
