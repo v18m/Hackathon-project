@@ -11,7 +11,7 @@ app.use('/', proxyMiddleware);
 
 try {
   const server = createTLSServer(app);
-  server.listen(config.GATEWAY_PORT, () => {
+  server.listen(config.GATEWAY_PORT, '0.0.0.0', () => {
     logger.info(`PQC Reverse Proxy Gateway is running and terminating TLS on port ${config.GATEWAY_PORT}`);
   });
 } catch (e) {
